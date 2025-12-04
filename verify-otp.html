@@ -49,15 +49,14 @@
             background: #d32f2f;
             border-radius: 50%;
             position: relative;
+            overflow: hidden;
         }
 
-        .logo-icon::after {
-            content: '🐝';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         h1 {
@@ -242,7 +241,7 @@
     <div class="container">
         <div class="logo">
             <span class="logo-text">Karu-mata</span>
-            <div class="logo-icon"></div>
+            <div class="logo-icon"><img src="src/karumata.png" alt="Logo"></div>
         </div>
         
         <h1>Verify your email</h1>
