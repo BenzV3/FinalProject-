@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karumata - Log in</title>
+    <title>Jollibee - Log in</title>
     <style>
         * {
             margin: 0;
@@ -42,7 +42,7 @@
         }
 
         .logo-text {
-            color: #E31837;
+            color: #d32f2f;
             font-size: 32px;
             font-weight: 700;
         }
@@ -50,18 +50,17 @@
         .logo-icon {
             width: 45px;
             height: 45px;
-            background: #E31837;
+            background: #d32f2f;
             border-radius: 50%;
             position: relative;
+            overflow: hidden;
         }
 
-        .logo-icon::after {
-            content: '🐝';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         h1 {
@@ -85,7 +84,7 @@
         }
 
         .terms a {
-            color: #E31837;
+            color: #d32f2f;
             text-decoration: none;
             font-weight: 500;
         }
@@ -107,7 +106,7 @@
         }
 
         label .required {
-            color: #E31837;
+            color: #d32f2f;
         }
 
         input {
@@ -122,7 +121,7 @@
 
         input:focus {
             outline: none;
-            border-color: #E31837;
+            border-color: #d32f2f;
         }
 
         input::placeholder {
@@ -139,7 +138,7 @@
         .create-account-btn {
             background: none;
             border: none;
-            color: #E31837;
+            color: #d32f2f;
             font-size: 16px;
             font-weight: 500;
             cursor: pointer;
@@ -153,13 +152,8 @@
             text-decoration: underline;
         }
 
-        .create-account-btn::before {
-            content: '✏️';
-            font-size: 18px;
-        }
-
         .login-btn {
-            background: #E31837;
+            background: #d32f2f;
             color: white;
             border: none;
             padding: 14px 40px;
@@ -171,7 +165,7 @@
         }
 
         .login-btn:hover {
-            background: #c21530;
+            background: #d32f2f;
         }
 
         .login-btn:active {
@@ -184,11 +178,11 @@
         }
 
         .error {
-            border-color: #E31837 !important;
+            border-color: #d32f2f !important;
         }
 
         .error-message {
-            color: #E31837;
+            color: #d32f2f;
             font-size: 12px;
             margin-top: 4px;
             display: none;
@@ -207,8 +201,8 @@
     <div class="container">
         <div class="left-section">
             <div class="logo">
-                <span class="logo-text">Jollibee</span>
-                <div class="logo-icon"></div>
+                <span class="logo-text">Karu-mata</span>
+                <div class="logo-icon"><img src="src/karumata.png" alt="Logo"></div>
             </div>
             
             <h1>Log in</h1>
@@ -286,9 +280,7 @@
 
         // Create account button
         createAccountBtn.addEventListener('click', () => {
-            alert('Redirecting to registration page...');
-            // Uncomment for actual redirect:
-            // window.location.href = 'register.html';
+            window.location.href = 'sign-up.html';
         });
     </script>
 </body>

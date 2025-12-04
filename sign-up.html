@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Karumata - Sign Up</title>
     <style>
         * {
             margin: 0;
@@ -58,6 +58,7 @@
             background: #d32f2f;
             border-radius: 50%;
             position: relative;
+            overflow: hidden;
         }
 
         .logo-icon img {
@@ -66,6 +67,7 @@
             object-fit: cover;
             border-radius: 50%;
         }
+
         h1 {
             font-size: 36px;
             color: #333;
@@ -82,6 +84,7 @@
             color: #d32f2f;
             text-decoration: none;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .welcome-text a:hover {
@@ -209,7 +212,7 @@
         }
 
         .create-btn:hover {
-            background: #d32f2f;
+            background: #b71c1c;
         }
 
         .create-btn:active {
@@ -247,7 +250,7 @@
         <div class="left-section">
             <div>
                 <div class="logo">
-                    <span class="logo-text">Karumata</span>
+                    <span class="logo-text">Karu-mata</span>
                     <div class="logo-icon"><img src="src/karumata.png" alt="Logo"></div>
                 </div>
                 
@@ -435,19 +438,23 @@
             }
 
             if (isValid) {
-                alert('Account created successfully!\n\nName: ' + firstName.value + ' ' + lastName.value + '\nEmail: ' + email.value + '\nMobile: +63' + mobile.value);
-                form.reset();
+                // Generate reference code
+                const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+                
+                // Redirect to verify-otp page
+                window.location.href = 'verify-otp.html?email=' + encodeURIComponent(email.value) + '&ref=' + refCode;
             }
         });
 
-        // Login button handlers
+        // Login button - redirects to log-in.html
         document.getElementById('loginBtn').addEventListener('click', () => {
-            alert('Redirecting to login page...');
+            window.location.href = 'log-in.html';
         });
 
+        // Login link - redirects to log-in.html
         document.getElementById('loginLink').addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Redirecting to login page...');
+            window.location.href = 'log-in.html';
         });
     </script>
 </body>
